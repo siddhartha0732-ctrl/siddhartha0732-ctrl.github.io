@@ -2,81 +2,439 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nexora Digital</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial;background:#080d1b;color:white}
-header{padding:22px 8%;background:#111a30;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:23px;font-weight:bold;color:#8496ff}
-nav a{color:white;text-decoration:none;margin-left:12px;font-size:13px}
-.hero{min-height:80vh;padding:100px 8%;background:linear-gradient(120deg,#111b38,#080d1b);display:flex;align-items:center}
-.hero h1{font-size:48px;line-height:1.2}
-span{color:#8496ff}
-.hero p{color:#c5cbe0;margin:20px 0;font-size:17px}
-.btn{background:#657cff;padding:13px 24px;color:white;text-decoration:none;border-radius:8px;display:inline-block}
-section{padding:75px 8%}
-h2{text-align:center;font-size:34px;margin-bottom:30px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
-.card{background:#151f38;padding:28px;border-radius:12px;border:1px solid #303d63}
-.card h3{color:#91a2ff;margin-bottom:12px}
-.card p{color:#c3cbe0}
-.about{text-align:center;color:#c3cbe0;max-width:700px;margin:auto}
-.contact{text-align:center;background:#111b32}
-footer{text-align:center;padding:25px;color:#aaa}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nexora Digital - Web development, app development, graphic design and digital marketing services.">
+  <title>Nexora Digital | Creative Digital Agency</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #080d1c;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(8, 13, 28, 0.94);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding: 18px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 800;
+      color: #8b9cff;
+    }
+
+    nav {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #d4dcf5;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #9aabff;
+    }
+
+    .hero {
+      min-height: 590px;
+      padding: 100px 8%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(78, 85, 220, 0.25), transparent 35%),
+        radial-gradient(circle at 80% 70%, rgba(128, 65, 220, 0.2), transparent 35%);
+    }
+
+    .tag {
+      color: #a8b4ff;
+      border: 1px solid #424d91;
+      padding: 7px 17px;
+      border-radius: 30px;
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 7vw, 68px);
+      line-height: 1.12;
+      max-width: 850px;
+      margin-bottom: 22px;
+    }
+
+    .gradient {
+      background: linear-gradient(90deg, #8297ff, #c28cff);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: #aeb9d4;
+      font-size: 17px;
+      margin-bottom: 32px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 25px;
+      border-radius: 9px;
+      background: linear-gradient(100deg, #596cff, #945bdb);
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+      border: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 28px rgba(100, 90, 255, 0.3);
+    }
+
+    section {
+      padding: 85px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #9eabc7;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+    }
+
+    .service-card {
+      background: linear-gradient(145deg, #141e38, #10172b);
+      border: 1px solid #263454;
+      border-radius: 15px;
+      padding: 30px 23px;
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: #788aff;
+      box-shadow: 0 15px 35px rgba(67, 80, 180, 0.16);
+    }
+
+    .service-icon {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+      color: #c4ceff;
+    }
+
+    .service-card p {
+      color: #a7b2cc;
+      font-size: 14px;
+    }
+
+    .about {
+      background: #0d1428;
+      text-align: center;
+    }
+
+    .about p {
+      max-width: 750px;
+      margin: auto;
+      color: #b2bdd5;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
+    }
+
+    .project-card {
+      background: #141e38;
+      border: 1px solid #263454;
+      border-radius: 14px;
+      padding: 30px;
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      border-color: #8795ff;
+    }
+
+    .project-card h3 {
+      color: #c4ceff;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      color: #a7b2cc;
+      font-size: 14px;
+    }
+
+    .contact {
+      text-align: center;
+      background:
+        radial-gradient(circle at center, rgba(82, 75, 190, 0.18), transparent 55%);
+    }
+
+    .contact p {
+      color: #b2bdd5;
+      margin-bottom: 25px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .email-btn {
+      display: inline-block;
+      padding: 13px 25px;
+      border: 1px solid #7182d9;
+      border-radius: 9px;
+      color: #c7d0ff;
+      transition: 0.3s;
+    }
+
+    .email-btn:hover {
+      background: #18244a;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #8996b4;
+      border-top: 1px solid #202b46;
+      font-size: 13px;
+    }
+
+    .whatsapp {
+      position: fixed;
+      bottom: 22px;
+      right: 20px;
+      z-index: 20;
+      background: #20c76a;
+      color: white;
+      padding: 13px 17px;
+      border-radius: 40px;
+      font-weight: bold;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    }
+
+    @media (max-width: 600px) {
+      header {
+        justify-content: center;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 13px;
+      }
+
+      .hero {
+        padding: 75px 6%;
+        min-height: 520px;
+      }
+
+      section {
+        padding: 65px 6%;
+      }
+
+      .section-title h2 {
+        font-size: 29px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<header>
-<div class="logo">NEXORA DIGITAL</div>
-<nav>
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
 
-<div class="hero" id="home">
-<div>
-<h1>Transforming Ideas<br>Into <span>Digital Experiences.</span></h1>
-<p>We build modern websites and creative digital solutions for your business.</p>
-<a href="#contact" class="btn">Let's Get Started →</a>
-</div>
-</div>
+  <header>
+    <a href="#home" class="logo">NEXORA DIGITAL</a>
 
-<section id="about">
-<h2>About <span>Us</span></h2>
-<p class="about">Nexora Digital is a creative digital brand focused on website development, modern design and innovative digital solutions.</p>
-</section>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<section id="services">
-<h2>Our <span>Services</span></h2>
-<div class="cards">
-<div class="card"><h3>🌐 Web Development</h3><p>Professional and responsive websites.</p></div>
-<div class="card"><h3>🎨 UI/UX Design</h3><p>Modern and attractive user experiences.</p></div>
-<div class="card"><h3>📱 Digital Solutions</h3><p>Smart solutions for growing businesses.</p></div>
-<div class="card"><h3>🚀 Branding</h3><p>Creative branding for your business.</p></div>
-</div>
-</section>
+  <main>
+    <section class="hero" id="home">
+      <div class="tag">CREATIVE DIGITAL AGENCY</div>
 
-<section id="projects">
-<h2>Our <span>Projects</span></h2>
-<div class="cards">
-<div class="card"><h3>Business Website</h3><p>Modern business website design.</p></div>
-<div class="card"><h3>Creative Portfolio</h3><p>Professional digital portfolio.</p></div>
-</div>
-</section>
+      <h1>
+        Build Your Future With
+        <span class="gradient">Nexora Digital</span>
+      </h1>
 
-<section class="contact" id="contact">
-<h2>Let's <span>Connect</span></h2>
-<p>Have an idea? Let's create something amazing.</p><br>
-<a class="btn" href="mailto:YOUR_EMAIL@gmail.com">Contact Us</a>
-</section>
+      <p>
+        We turn creative ideas into powerful digital experiences.
+        From modern websites to branding and digital marketing,
+        we help your business grow online.
+      </p>
 
-<footer>© 2026 Nexora Digital. All Rights Reserved.</footer>
+      <a href="#contact" class="btn">Let's Work Together</a>
+    </section>
+
+    <section id="services">
+      <div class="section-title">
+        <h2>Our Services</h2>
+        <p>Creative solutions to grow your digital presence.</p>
+      </div>
+
+      <div class="services">
+
+        <div class="service-card">
+          <div class="service-icon">🌐</div>
+          <h3>Web Development</h3>
+          <p>Modern, responsive and professional websites for your business and brand.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📱</div>
+          <h3>App Development</h3>
+          <p>Creative mobile application solutions designed around your ideas.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🎨</div>
+          <h3>Graphic Design</h3>
+          <p>Eye-catching logos, social media designs, banners and brand visuals.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">✨</div>
+          <h3>UI/UX Design</h3>
+          <p>Clean, attractive and user-friendly digital interface experiences.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📈</div>
+          <h3>Digital Marketing</h3>
+          <p>Smart digital strategies to improve your online reach and visibility.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🚀</div>
+          <h3>Ads Boosting</h3>
+          <p>Facebook and Instagram advertising support to reach more customers.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="section-title">
+        <h2>About <span class="gradient">Nexora</span></h2>
+        <p>Ideas. Innovation. Digital Growth.</p>
+      </div>
+
+      <p>
+        Nexora Digital is a creative digital brand focused on helping
+        businesses and individuals build a strong online presence.
+        We believe in combining creativity, technology and smart
+        digital solutions to turn ideas into reality.
+      </p>
+    </section>
+
+    <section id="projects">
+      <div class="section-title">
+        <h2>Our Projects</h2>
+        <p>A glimpse of what we can create for you.</p>
+      </div>
+
+      <div class="projects">
+        <div class="project-card">
+          <h3>Business Websites</h3>
+          <p>Professional websites for businesses, shops and startups.</p>
+        </div>
+
+        <div class="project-card">
+          <h3>Creative Branding</h3>
+          <p>Unique visual identities and graphic design concepts.</p>
+        </div>
+
+        <div class="project-card">
+          <h3>Digital Campaigns</h3>
+          <p>Social media marketing and advertising campaign concepts.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="section-title">
+        <h2>Let's Create Something <span class="gradient">Amazing</span></h2>
+      </div>
+
+      <p>Have a project or an idea? Get in touch with Nexora Digital.</p>
+
+      <div class="contact-buttons">
+        <a class="btn" href="https://wa.me/9779716072247" target="_blank" rel="noopener">
+          WhatsApp Us
+        </a>
+
+        <a class="email-btn" href="mailto:nexoradigital078@gmail.com">
+          Email Us
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Nexora Digital. All Rights Reserved.
+  </footer>
+
+  <a class="whatsapp" href="https://wa.me/9779716072247" target="_blank" rel="noopener">
+    WhatsApp
+  </a>
+
 </body>
-  </html>
-  
+</html>
